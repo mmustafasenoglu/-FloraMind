@@ -1,13 +1,15 @@
 # 🦋 FloraMind - Vintage Botanical AI Gut Health App
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://flora.algoforge.com.tr)
+
 Bu proje, modern web geliştirme standartlarına uygun olarak **Django (Backend)** ve **React (Frontend)** kullanılarak geliştirilmiştir. Proje mimarisi, ölçeklenebilirlik ve performans için mikro servis mantığıyla ayrılmış ve Dockerize edilmiştir.
 
 ## 🏗️ Mimari Yapı
 
 Proje iki ana parçadan oluşur ve modern bir mimariye sahiptir:
 
-*   **Frontend:** React.js ile geliştirildi, Vite kullanılarak build alındı.
-*   **Backend:** Django REST Framework ile geliştirildi. **Docker** konteynerizasyonu ile çalışıyor.
+*   **Frontend:** React.js ile geliştirildi, Vite kullanılarak build alındı ve **Vercel**'de deploy edildi.
+*   **Backend:** Django REST Framework ile geliştirildi, Dockerize edilerek **Render**'da deploy edildi.
 *   **AI:** Google Gemini 2.0 Flash API (RAG Mimarisi ile).
 *   **Veritabanı:** PostgreSQL / SQLite (Geliştirme ortamında).
 
