@@ -30,4 +30,12 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Run gunicorn
+# Copy entrypoint script
+COPY entrypoint.sh /app/
+RUN chmod +x /app/entrypoint.sh
+
+# Run entrypoint script
+ENTRYPOINT ["/app/entrypoint.sh"]
+
+# Run gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
