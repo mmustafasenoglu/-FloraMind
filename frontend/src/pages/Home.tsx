@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Typography, Box, Paper, IconButton, Button, InputBase, CircularProgress } from '@mui/material';
 import {
     InfoOutlined, Search

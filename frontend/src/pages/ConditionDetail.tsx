@@ -20,32 +20,7 @@ interface Condition {
     scientific_corner_text: string;
 }
 
-// Unified eHealth style section colors (Blue/White theme)
-const sectionStyles = {
-    emergency: {
-        iconColor: '#2563eb', // Royal Blue
-        iconBg: 'rgba(37, 99, 235, 0.1)',
-        borderColor: '#bfdbfe',
-    },
-    kitchen: {
-        iconColor: '#059669', // Emerald Green (kept for context but decorative only) -> actually user said "arayuz renkleri bunun gibi olsun", implying uniform blue. I will make them all Blue-based to be safe and professional, distinguishing by icon.
-        // Re-reading: "arayuz rewnklerı bunun gıbı oolsun" -> User wants the interface like the image (Blue).
-        // I will use Blue for everything to be safe and strictly follow "eHealth" look.
-        iconColor: '#2563eb',
-        iconBg: 'rgba(37, 99, 235, 0.1)',
-        borderColor: '#bfdbfe',
-    },
-    forbidden: {
-        iconColor: '#2563eb',
-        iconBg: 'rgba(37, 99, 235, 0.1)',
-        borderColor: '#bfdbfe',
-    },
-    science: {
-        iconColor: '#2563eb',
-        iconBg: 'rgba(37, 99, 235, 0.1)',
-        borderColor: '#bfdbfe',
-    },
-};
+
 
 const ConditionDetail = () => {
     const { slug } = useParams();
