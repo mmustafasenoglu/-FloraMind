@@ -1,75 +1,88 @@
-# 🦋 GastroBotanica (GutSense AI)
+# 🦋 FloraMind - Vintage Botanical AI Gut Health App
 
-## 🌿 Doğanın Bilgeliği, Yapay Zekanın Gücüyle Buluşuyor.
+Bu proje, modern web geliştirme standartlarına uygun olarak **Django (Backend)** ve **React (Frontend)** kullanılarak geliştirilmiştir. Proje mimarisi, ölçeklenebilirlik ve performans için mikro servis mantığıyla ayrılmış ve Dockerize edilmiştir.
 
-**GastroBotanica**, geleneksel tıp estetiğini modern yapay zeka teknolojisiyle birleştiren, Türkiye'nin ilk vintage temalı dijital bağırsak sağlığı asistanıdır.
+## 🏗️ Mimari Yapı
 
-![Project Status](https://img.shields.io/badge/Status-Active-success)
-![License](https://img.shields.io/badge/License-MIT-blue)
-![Tech Stack](https://img.shields.io/badge/Tech-React%20%7C%20Django%20%7C%20Gemini%20AI-orange)
+Proje iki ana parçadan oluşur ve modern bir mimariye sahiptir:
 
----
+*   **Frontend:** React.js ile geliştirildi, Vite kullanılarak build alındı.
+*   **Backend:** Django REST Framework ile geliştirildi. **Docker** konteynerizasyonu ile çalışıyor.
+*   **AI:** Google Gemini 2.0 Flash API (RAG Mimarisi ile).
+*   **Veritabanı:** PostgreSQL / SQLite (Geliştirme ortamında).
 
-### ✨ Proje Hakkında
-
-Bu proje, kullanıcıların gastrointestinal semptomlarını (gaz sıkışması, şişkinlik, mide yanması vb.) analiz ederek onlara **kişiselleştirilmiş, kaynağı belli ve güvenilir** sağlık önerileri sunar.
-
-Sıradan soğuk sağlık uygulamalarının aksine, **GastroBotanica** kullanıcıyı sakinleştiren, **"eski bir botanik kitabı"** hissiyatı veren özel bir tasarıma sahiptir.
-
-### 🚀 Öne Çıkan Özellikler
-
-*   **🎨 Vintage Botanical UI:**  Eski parşömen kağıtları, detaylı botanik çizimler, cam efektleri (Glassmorphism) ve altın/bronz tipografi ile eşsiz bir görsel deneyim.
-*   **🧠 Gemini 2.0 Flash Destekli Yapay Zeka:** Google'ın en güçlü modellerinden biri ile semptomlarınızı analiz eder.
-*   **📚 RAG (Retrieval-Augmented Generation):**  Sadece yapay zekanın "halüsinasyon" görmesini engellemekle kalmaz, veritabanındaki **doğrulanmış tıbbi makalelerden** beslenerek kanıta dayalı sonuçlar üretir.
-*   **🔍 Akıllı Arama:** Binlerce semptom ve hastalık arasında anlık arama yapabilir.
-*   **📱 Mobil Uyumlu:** Her cihazda (telefon, tablet, masaüstü) kusursuz görünür.
-
-### 🛠️ Teknolojiler
-
-*   **Frontend:** React, Vite, Material UI (Custom Theming)
-*   **Backend:** Python, Django REST Framework
-*   **AI & LLM:** Google Gemini 2.0 Flash API, LangChain (RAG Pipeline)
-*   **Veri Analizi:** Pandas, NumPy (Tıbbi veri işleme için)
+### Akış Şeması
+`Kullanıcı` -> `React (Frontend)` -> `API İstekleri` -> `Django (Docker Container)` -> `Gemini AI`
 
 ---
 
-### 📸 Ekran Görüntüleri
+## 🛠️ Teknolojiler
 
-*(Buraya projenin o harika kelebekli ve altın tonlu ekran görüntülerini ekleyeceğiz)*
+### Backend
+*   **Python & Django:** Ana framework.
+*   **Django REST Framework:** API yönetimi.
+*   **Google Gemini 2.0:** Semptom analizi ve teşhis için.
+*   **Docker:** Uygulama izolasyonu ve deploy kolaylığı için.
+*   **Gunicorn:** Production seviyesi WSGI sunucusu.
+*   **WhiteNoise:** Statik dosyaların (CSS/JS) sunulması için.
 
----
-
-### 💻 Kurulum
-
-Projenin yerel makinenizde çalışması için:
-
-1.  **Repoyu klonlayın:**
-    ```bash
-    git clone https://github.com/kullaniciadi/GastroBotanica.git
-    cd GastroBotanica
-    ```
-
-2.  **Backend Kurulumu:**
-    ```bash
-    cd backend
-    pip install -r requirements.txt
-    python manage.py runserver
-    ```
-
-3.  **Frontend Kurulumu:**
-    ```bash
-    cd frontend
-    npm install
-    npm run dev
-    ```
+### Frontend
+*   **React.js:** Kullanıcı arayüzü.
+*   **Vite:** Hızlı geliştirme ve build aracı.
+*   **Material UI:** Bileşen kütüphanesi (Vintage tema özelleştirmeleriyle).
+*   **Axios:** API istekleri için.
 
 ---
 
-### 🤝 Katkıda Bulunma
+## ⚙️ Kurulum (Local Development)
 
-Her türlü katkıya açığız! Lütfen bir **Issue** açarak veya **Pull Request** göndererek projeye destek olun.
+Projeyi kendi bilgisayarınızda çalıştırmak için şu adımları izleyin:
 
----
+### 1. Projeyi Klonlayın
+```bash
+git clone https://github.com/mmustafasenoglu/-FloraMind.git
+cd -FloraMind
+```
 
-**Yapımcı:** Mustafa Şenoğlu & AlgoForge AI
-*Mide sağlığınız için dijital bir dokunuş.* 🌿
+### 2. Backend Kurulumu
+```bash
+cd backend
+
+# Sanal ortam oluşturma
+python -m venv venv
+
+# Aktif etme (Mac/Linux)
+source venv/bin/activate
+# Aktif etme (Windows)
+venv\Scripts\activate
+
+# Gereksinimleri yükleme
+pip install -r requirements.txt
+
+# Çevre Değişkenleri (.env)
+# .env dosyası oluşturun ve GEMINI_API_KEY ekleyin.
+
+# Veritabanı ve Çalıştırma
+python manage.py migrate
+python manage.py runserver
+```
+
+### 3. Frontend Kurulumu
+```bash
+cd frontend
+
+# Paketleri yükleme
+npm install
+
+# Çalıştırma
+npm run dev
+```
+
+### 4. Docker ile Çalıştırma (Opsiyonel)
+```bash
+# Backend image oluşturma
+docker build -t floramind-backend ./backend
+
+# Çalıştırma
+docker run -d -p 8000:8000 --env-file backend/.env floramind-backend
+```

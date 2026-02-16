@@ -1,12 +1,18 @@
+import os
 import google.generativeai as genai
 import numpy as np
 from django.conf import settings
 from .models import MedicalArticle
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configure Gemini API
-# In a real app, use os.environ.get("GEMINI_API_KEY")
-API_KEY = "AIzaSyBtsyu0XZijoISjsj5-9X0ezUl2ixx-nR8" 
-genai.configure(api_key=API_KEY)
+GENAI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GENAI_API_KEY:
+    raise ValueError("GEMINI_API_KEY not found in environment variables")
+
+genai.configure(api_key=GENAI_API_KEY)
 
 class RAGService:
     def get_embedding(self, text):

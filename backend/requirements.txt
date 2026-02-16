@@ -3,3 +3,7 @@ djangorestframework>=3.14
 django-cors-headers>=4.0
 google-generativeai
 numpy
+gunicorn
+whitenoise
+psutil
+python-dotenv 
