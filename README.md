@@ -1,10 +1,10 @@
-# 🦋 FloraMind - Vintage Botanical AI Gut Health App
+#  FloraMind - Vintage Botanical AI Gut Health App
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://flora.algoforge.com.tr)
 
 Bu proje, modern web geliştirme standartlarına uygun olarak **Django (Backend)** ve **React (Frontend)** kullanılarak geliştirilmiştir. Proje mimarisi, ölçeklenebilirlik ve performans için mikro servis mantığıyla ayrılmış ve Dockerize edilmiştir.
 
-## 🏗️ Mimari Yapı
+## Mimari Yapı
 
 Proje iki ana parçadan oluşur ve modern bir mimariye sahiptir:
 
@@ -18,7 +18,7 @@ Proje iki ana parçadan oluşur ve modern bir mimariye sahiptir:
 
 ---
 
-## 🛠️ Teknolojiler
+##  Teknolojiler
 
 ### Backend
 *   **Python & Django:** Ana framework.
